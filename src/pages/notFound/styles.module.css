@@ -1,0 +1,9 @@
+.Container {
+  text-align: center;
+}
+
+.ErrorText {
+  font-size: 3rem;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+}
