@@ -8,6 +8,7 @@ function Select({
   value,
   className,
   options = [],
+  multiple,
 }) {
   return (
     <>
@@ -16,6 +17,7 @@ function Select({
         name={name}
         onChange={onChange}
         value={value}
+        multiple={multiple}
         className={`${styles.Select} ${className} ${
           !value ? styles.SelectPlaceholder : ""
         }`}

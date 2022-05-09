@@ -29,4 +29,7 @@
   .PictureInfo {
     flex: 1;
   }
+  .PictureDetails {
+    max-height: calc(100vh - 3.5rem);
+  }
 }

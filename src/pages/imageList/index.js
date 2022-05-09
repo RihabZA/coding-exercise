@@ -9,10 +9,8 @@ import {
 } from "../../assets/constants";
 import { getListImage } from "../../backend";
 import styles from "./styles.module.css";
-import { useNavigate } from "react-router-dom";
 
 function ImageList() {
-  const navigate = useNavigate();
   const [images, setImages] = useState([]);
   /*Initialize filters*/
   const [params, setParams] = useState({
@@ -124,7 +122,7 @@ function ImageList() {
               className={styles.Col}
               key={image.id}
               onClick={() => {
-                navigate("images/" + image.id);
+                window.open("images/" + image.id, "_blank");
               }}
             >
               <img src={image.previewURL} alt={image.tags} />

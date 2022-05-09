@@ -1,22 +1,22 @@
 .ImageContainer {
-  /*margin-top: -42px;
-  background-color: white;*/
   width: 90%;
   align-self: center;
-  /* border-radius: 0.5rem;*/
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .Row {
-  padding: 1.5rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: center;
 }
 
 .Col {
-  gap: 0.5rem;
+  cursor: pointer;
+}
+.Col:hover {
+  opacity: 0.3;
 }
 
 .SearchBox {
@@ -66,4 +66,5 @@
   height: 2.625rem;
   display: flex;
   align-items: center;
+  margin-bottom: 1rem;
 }
