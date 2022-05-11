@@ -2,6 +2,10 @@ import React from "react";
 import styles from "./styles.module.css";
 
 function Pagination({ size, page, setPage, step = 3 }) {
+  /*size: number of pages
+  page: current page number*
+  setPgae: set cuurent page*/
+
   const pagination = [];
 
   if (size < step * 2 + 6) {

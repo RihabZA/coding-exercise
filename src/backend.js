@@ -4,7 +4,7 @@ const baseUrl =
 /*Get list of images filtered based on user-provided parameters*/
 const getListImage = (params) => {
   return fetch(
-    `${baseUrl}&q=${params.search_term}&safesearch=true&order=${params.order}&image_type=${params.image_type}&category=${params.category}&orientation=${params.orientation}&colors=${params.colors}&per_page=${params.per_page}`
+    `${baseUrl}&q=${params.search_term}&safesearch=true&order=${params.order}&image_type=${params.image_type}&category=${params.category}&orientation=${params.orientation}&colors=${params.colors}&per_page=${params.per_page}&page=${params.page}`
   );
 };
 

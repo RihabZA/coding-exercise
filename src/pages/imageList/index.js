@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { MainContainer, Select } from "../../components";
+import { MainContainer, Select, Pagination } from "../../components";
 import {
   order,
   imageType,
@@ -12,6 +12,8 @@ import styles from "./styles.module.css";
 
 function ImageList() {
   const [images, setImages] = useState([]);
+  const [nbPages, setNbPages] = useState(1);
+
   /*Initialize filters*/
   const [params, setParams] = useState({
     search_term: "",
@@ -21,6 +23,7 @@ function ImageList() {
     colors: "",
     order: "popular",
     per_page: 20,
+    page: 1,
   });
 
   const perPage = [
@@ -36,10 +39,18 @@ function ImageList() {
     { value: 200, label: 200 },
   ];
 
+  const setPage = (page) => {
+    return setParams({
+      ...params,
+      page: page,
+    });
+  };
+
   const handleChange = (key) => (e) => {
     return setParams({
       ...params,
       [key]: e.target.value,
+      page: 1,
     });
   };
 
@@ -48,6 +59,7 @@ function ImageList() {
       .then((res) => res.json())
       .then(
         (data) => {
+          setNbPages(Math.ceil(data?.totalHits / params.per_page));
           setImages(data?.hits);
         },
         (error) => {}
@@ -130,6 +142,7 @@ function ImageList() {
           ))}
         </div>
       </div>
+      <Pagination size={nbPages} page={params.page} setPage={setPage} />
     </MainContainer>
   );
 }
