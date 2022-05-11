@@ -41,3 +41,28 @@
 .SelectPlaceholder {
   color: #999;
 }
+
+/*Pagination styling*/
+.PaginationSection {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.Btn {
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 0;
+  border: 1px solid #6c757d;
+}
+
+.ActiveBtn {
+  background-color: #007bff;
+  color: white;
+}
